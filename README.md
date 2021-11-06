@@ -1,7 +1,4 @@
-# fwb51vasana
+# db51vasana
 
-Hey this is Web Apps Assignment 10
+Hey this is Web Apps Assignment 11
 
-Heroku server at https://fwb51vasana.herokuapp.com/
-
-class text attributes: color(String),font(String),size(number)
