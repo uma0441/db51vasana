@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  - var results = [{"color":"Blue", "font":"Calibri","size":12},{"color":"Black", "font":"Futura","size":13},{"color":"Purple", "font":"Times New Roman","size":14}]
+  div(class="container-fuild")
+    div(class="row")
+      each result,index in results
+        div(class = "col-sm-2" id=index onclick=`buy(${index})`) 
+          p #{result.color}
+          p #{result.font}
+          p #{result.size}  
+
+  script.
+   function buy(element){
+     alert(`You purchased item ${element+1}.`)
+    }
