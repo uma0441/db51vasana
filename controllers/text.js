@@ -1,13 +1,13 @@
 var text = require('../models/text');
-// List of all Gass
+// List of all text
 exports.text_list = function (req, res) {
     res.send('NOT IMPLEMENTED: Text list');
 };
-// for a specific Gas.
+// for a specific text
 exports.text_detail = function (req, res) {
     res.send('NOT IMPLEMENTED: Text detail: ' + req.params.id);
 };
-// Handle Gas create on POST.
+// Handle text create on POST.
 exports.text_create_post = async function (req, res) {
     console.log(req.body)
     let document = new text();
@@ -25,16 +25,16 @@ exports.text_create_post = async function (req, res) {
         res.send(`{"error": ${err}}`);
     }
 };
-// Handle Gas delete form on DELETE.
+// Handle text delete form on DELETE.
 exports.text_delete = function (req, res) {
     res.send('NOT IMPLEMENTED: Text delete DELETE ' + req.params.id);
 };
-// Handle Gas update form on PUT.
+// Handle text update form on PUT.
 exports.text_update_put = function (req, res) {
     res.send('NOT IMPLEMENTED: Text update PUT' + req.params.id);
 };
 
-// List of all Text
+// List of all text
 exports.text_list = async function (req, res) {
     try {
         thetext = await text.find();
