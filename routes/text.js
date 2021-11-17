@@ -6,6 +6,13 @@ var router = express.Router();
 router.get('/', text_controlers.text_view_all_Page );
 module.exports = router;
 
+/* GET detail school page */
+
+router.get("/detail", text_controlers.text_view_one_Page);
+router.get('/create', text_controlers.text_create_Page);
+router.get('/update', text_controlers.text_update_Page);
+router.get('/delete', text_controlers.text_delete_Page);
+
 // GET request for one costume.
 router.get('/text/:id', text_controlers.text_detail);
 

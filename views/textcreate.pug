@@ -1,0 +1,41 @@
+extends layout 
+ 
+block content 
+  h1= title 
+
+  form(id='textForm', action="/resource/text", method="POST") 
+    div.form-group 
+        label.textAttr(for='Color') Text Color 
+        input#Color(type='text', name='Color') 
+    div.form-group 
+        label.textAttr(for='Font') Text  Font
+        input#Font(type='text', name='Font') 
+    div.form-group 
+        label.textAttr(for='Size') Text Size 
+        input#Size(type='number', name='Size') 
+    input(type="submit") 
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
+ 
+  script. 
+    function cancel() { 
+      // Go back to the home page for the costume collection 
+      window.location.href='/school' 
+    } 
+ 
+  script. 
+    document.forms['textForm'].addEventListener('submit', (event) => { 
+      event.preventDefault(); 
+      // TODO do something here to show user that form is being submitted 
+      fetch(event.target.action, { 
+        method: 'POST', 
+        body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Save succeded") 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Save failed " + error ) 
+      }); 
+    });

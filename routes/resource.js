@@ -19,3 +19,6 @@ router.get('/resource/text/:id', Text_controller.text_detail);
 // GET request for list of all Text items.
 router.get('/resource/text', Text_controller.text_list);
 module.exports = router;
+
+// GET request for one costume.
+router.get('/text/:id', Text_controller.text_detail);

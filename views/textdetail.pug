@@ -1,0 +1,22 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  - let textid = toShow._id 
+  - let Color = toShow.Color 
+  - let Font = toShow.Font 
+  - let Size = toShow.Size
+  div 
+    div.row 
+      div(class='textAttr mr-3') Text ID is: 
+      div #{textid} 
+    div.row 
+      div(class='textAttr mr-3') Color is: 
+      div #{Color} 
+    div.row 
+      div(class='textAttr mr-3') Font is: 
+      div #{Font} 
+    div.row 
+      div(class='textAttr mr-3') Size is: 
+      div #{Size} 
