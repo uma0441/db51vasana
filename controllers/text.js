@@ -71,7 +71,7 @@ exports.text_view_all_Page = async function (req, res) {
     try {
         thetext = await text.find();
         res.render('text', {
-            title: 'text Search Results',
+            title: 'Text Search Results',
             results: thetext
         });
     } catch (err) {

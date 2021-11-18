@@ -20,3 +20,12 @@ block content
     div.row 
       div(class='textAttr mr-3') Size is: 
       div #{Size} 
+
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
+ 
+  script. 
+    function cancel() { 
+      // Go back to the home page for the Text collection 
+      window.location.href='/text' 
+    }
+
