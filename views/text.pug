@@ -2,19 +2,23 @@ extends layout
 
 block content
   h1= title
-  - var results = [{"color":"Blue", "font":"Calibri","size":12},{"color":"Black", "font":"Futura","size":13},{"color":"Purple", "font":"Times New Roman","size":14}]
-  div(class="container-fuild")
-    div(class="row")
-      each result,index in results
-        div(class = "col-sm-2" id=index onclick=`buy(${index})`) 
-          p #{result.color}
-          p #{result.font}
-          p #{result.size}
-          a(href="text/update/?id="+result.id)  Update
-          a(href="text/detail/?id="+result.id)  View
-          a(href="text/delete/?id="+result.id)  Delete
+  - let o;
+  - let items = results;
+  div(class='container-fluid')
+    div(class='row m-1')
+    div(class= "row row-cols-1 row-cols-sm-4 g-6")
+      each item, index in items
+        - let destination = `dispatch(\"/text/update?id=${item._id}\")`
+        div(class="card text-white bg-success mb-3" class='col card card-body card-text' onclick='buy('+index+')') Item #{item.Color}(#{item.Font}) is #{item.Size}
+          <br><br>
+          button.btn( class="btn-light ml-1", onclick= destination) Update
 
   script.
-   function buy(element){
-     alert(`You purchased item ${element+1}.`)
-    }
+    function buy(x){  
+      alert('Purchased Item: ' + x)
+   }
+
+  script.
+    function dispatch(path){
+      window.location.href=path
+    } 

@@ -1,13 +1,4 @@
 var text = require('../models/text');
-// List of all text
-exports.text_list = function (req, res) {
-    res.send('NOT IMPLEMENTED: Text list');
-};
-// for a specific text
-exports.text_detail = function (req, res) {
-    res.send('NOT IMPLEMENTED: Text detail: ' + req.params.id);
-};
-
 
 
 // Handle text create on POST.
@@ -27,10 +18,6 @@ exports.text_create_post = async function (req, res) {
         res.status(500);
         res.send(`{"error": ${err}}`);
     }
-};
-// Handle text delete form on DELETE.
-exports.text_delete = function (req, res) {
-    res.send('NOT IMPLEMENTED: Text delete DELETE ' + req.params.id);
 };
 
 // Handle Costume update form on PUT.
